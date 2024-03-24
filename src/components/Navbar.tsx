@@ -19,7 +19,7 @@ export default function Navbar() {
     }
 
     function handleHomeClicked() {
-        navigate("/")
+        navigate(homeRoute)
         window.location.reload()
     }
 
