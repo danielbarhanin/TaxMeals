@@ -1,0 +1,373 @@
+
+/* App */
+
+.meals-container {
+  display: grid;
+  grid-template: auto auto / repeat(4, 1fr);
+  gap: 15px;
+  row-gap: 25px;
+  margin-top: 40px;
+  padding: 10px;
+}
+
+/* App */
+
+/* Navbar */
+nav {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+}
+
+.nav--upper {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  background: #F2D4D7;
+  padding: 10px 20px;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+}
+
+.nav--logo {
+  width: 50px;
+  cursor: pointer;
+}
+
+.nav--title {
+  font-family: Madimi One, serif;
+  font-weight: 400;
+  font-size: 30px;
+  color: #454545;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.nav--p {
+  font-family: "Heiti TC", serif;
+  margin-left: auto;
+  font-size: 13px;
+  align-self: flex-end;
+}
+
+.nav--lower {
+  background: rgb(242, 212, 215, .75);
+  padding: 10px;
+}
+
+.nav-button {
+  padding: 4px 18px;
+  border: solid #8C8C8C 1px;
+  border-radius: 10px;
+  background: #F6F5F5;
+  font-family: "KoHo", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.category-button {
+  margin-left: auto;
+  align-self: flex-end;
+}
+
+.country-button {
+  margin-left: auto;
+  align-self: flex-end;
+}
+
+/* Navbar */
+
+/* Search section*/
+.search-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.search-bar {
+  font-family: "KoHo", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  border: solid #F2D4D7 1px;
+  padding: 20px 55px;
+  border-radius: 30px;
+  font-size: 25px;
+  margin-left: -20px;
+}
+
+.filter-by {
+  margin-left: 15px;
+  font-family: "KoHo", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+}
+
+.filter-options {
+  margin-left: 7px;
+  border: solid #F2D4D7 1px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-family: "KoHo", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.category-logo {
+  width: 30px;
+  margin-left: 15px;
+}
+
+.country-logo {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+}
+
+.random-button {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+  border: solid #F2D4D7 1px;
+  background: white;
+  border-radius: 8px;
+  font-family: "KoHo", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.random-button:hover {
+  box-shadow: 0 4px 12px 0 rgba(0,0,0,0.2);
+}
+
+.random-logo {
+  width: 35px;
+  padding-right: 10px;
+}
+
+
+/* Search section*/
+
+.loader-container {
+  display:flex;
+  width:100%;
+  height: 400px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.loader {
+  display:table-row;
+  border: 12px solid #E5E4E2;
+  border-top: 12px solid #F2D4D7;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* MealCard */
+.card {
+  background: #EEEEEE;
+  display: flex;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+  transition: 0.3s;
+  width: 400px;
+  height: 250px;
+  cursor: pointer;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card--img {
+  border-radius: 20px;
+  padding: 10px;
+  width: 50%;
+}
+
+.card--details {
+  font-family: "KoHo", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  margin-left: 10px;
+}
+
+.details--section{
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+.card--category-logo {
+  width: 25px;
+  padding: 3px;
+}
+
+.card--area-logo {
+  width: 18px;
+  padding: 6px;
+}
+
+.link-logo {
+  width: 25px;
+  padding: 3px;
+}
+
+/* MealCard */
+
+/* Meal Page */
+
+.meal-page{
+  display: flex;
+  font-family: "KoHo", sans-serif;
+  flex-direction: column;
+  padding: 10px 50px;
+  align-items: flex-start;
+  margin-left: 100px;
+}
+
+.meal-title {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+.meal-metadata-contianer {
+  display: flex;
+}
+
+.metadata-card {
+  display: grid;
+  margin-left: 100px;
+  height: 320px;
+  align-self: center;
+  background: #EEEEEE;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+  transition: 0.3s;
+  padding: 20px;
+}
+
+.metadata--section{
+  display: flex;
+  align-items: center;
+  font-weight:400;
+  font-size: 20px;
+  font-style: normal;
+}
+
+.metadata--span {
+  cursor: pointer;
+}
+
+.metadata--category-logo {
+  width: 35px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+
+.metadata--area-logo {
+  width: 25px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.metadata-link-logo {
+  width: 35px;
+  margin-right: 8px;
+}
+
+.metadata-youtube-logo {
+  width: 30px;
+  margin-right: 10px
+}
+
+.meal-logo {
+  border-radius: 25px;
+  width: 40%;
+  height: 40%;
+}
+
+.meal-section {
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.ingredient {
+  display: flex;
+  align-items: center;
+  font-weight:400;
+  font-size: 20px;
+  font-style: normal;
+  margin-top: -6px;
+}
+
+.ingredient-logo {
+  width: 27px;
+  height: 27px;
+  margin-right: 10px;
+}
+
+.ingredient-name {
+  margin-left: 10px;
+}
+
+.meal-instructions {
+  font-weight:400;
+  font-size: 20px;
+  font-style: normal;
+  line-height: 2.8rem;
+  margin-top: -5px;
+}
+
+
+
+/* Meal Page */
+
+/* Type Page */
+.type-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.type--title {
+  font-family: "KoHo", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  align-self: center;
+}
+
+.type-page--filter {
+  display: flex;
+  margin-left: 15px;
+  align-items: center;
+  margin-top: -5px;
+}
+
+.type-page--filter-title {
+  font-family: "KoHo", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+/* Type Page */
+
