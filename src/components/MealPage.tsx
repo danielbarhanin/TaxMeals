@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import {IngredientProps } from "./Ingredient.tsx";
 import Ingredient from "./Ingredient.tsx";
 import MealMetadata from "./MealMetadata.tsx";
-import {mealByIdUrl} from "../utils/routesData.ts";
+import {mealByIdUrl, MealResponse} from "../utils/routesData.ts";
 
 
 interface Meal {
@@ -27,7 +27,7 @@ export default function MealPage() {
         <Ingredient name={ingredient.name} measurement={ingredient.measurement}/>
     )
 
-    function getIngredient(meal): IngredientProps[] {
+    function getIngredient(meal: any): IngredientProps[] {
         const ingredients: IngredientProps[] = []
 
         for (let i=1; i < 21; i ++) {
@@ -43,7 +43,7 @@ export default function MealPage() {
         return ingredients
     }
 
-    function getMeal(meal): Meal {
+    function getMeal(meal: MealResponse): Meal {
         return {
             id: meal.idMeal,
             title: meal.strMeal,

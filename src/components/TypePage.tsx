@@ -4,7 +4,8 @@ import {nanoid} from "nanoid";
 import {useParams} from "react-router-dom";
 import Filter from "./Filter.tsx";
 import {categoryValues, countryValues, MetadataType} from "../utils/filterData.ts";
-import {filterUrl} from "../utils/routesData.ts";
+import {filterUrl, MealResponse} from "../utils/routesData.ts";
+import {createAMeal} from "../utils/MealFetchHelpers.ts";
 
 
 export default function TypePage(props: {type: MetadataType}) {
@@ -32,26 +33,15 @@ export default function TypePage(props: {type: MetadataType}) {
         fetchMeals(`${filterUrl}${prefix}${newTitle}`)
     }, [props.type, country, category]);
 
-    function createAMeal(meal): MealCardData {
-        return {
-            id: meal.idMeal,
-            img: meal.strMealThumb,
-            title: meal.strMeal,
-            category: meal.strCategory,
-            area: meal.strArea,
-            link: meal.strSource,
-        }
-    }
-
     function fetchMeals(url: string) {
         fetch(url)
             .then(res => res.json())
             .then(data => setMeals(
-                data.meals? data.meals.map(meal => createAMeal(meal)) : []
+                data.meals? data.meals.map((meal: MealResponse) => createAMeal(meal)) : []
             ))
     }
 
-    async function handleTypeSelected(type: MetadataType, value: string) {
+    async function handleTypeSelected(_type: MetadataType, value: string) {
         setTitle(value)
         fetchMeals(`${filterUrl}${prefix}${value}`)
     }

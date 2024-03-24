@@ -1,9 +1,9 @@
 
 import {MealCardData} from "../components/MealCard.tsx";
 import {MetadataType} from "./filterData.ts";
-import {filterUrl, mealByIdUrl} from "./routesData.ts";
+import {filterUrl, mealByIdUrl, MealResponse} from "./routesData.ts";
 
-export function createAMeal(meal): MealCardData {
+export function createAMeal(meal: MealResponse): MealCardData {
     return {
         id: meal.idMeal,
         img: meal.strMealThumb,
@@ -17,12 +17,12 @@ export function createAMeal(meal): MealCardData {
 async function fetchFilteredMealsId(url: string) {
     const res = await fetch(url)
     const data = await res.json()
-    return data.meals.map(meal => meal.idMeal)
+    return data.meals.map((meal: { idMeal: MealResponse }) => meal.idMeal)
 }
 
 async function fetchMealsByMealId(mealsId: string[]) {
     const meals = []
-    for (let id of mealsId) {
+    for (const id of mealsId) {
         const r = await fetch(`${mealByIdUrl}${id}`)
         const d = await r.json()
         const meal = createAMeal(d.meals[0])

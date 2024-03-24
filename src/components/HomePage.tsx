@@ -4,7 +4,7 @@ import {nanoid} from "nanoid"
 import SearchSection from "./SearchSection.tsx";
 import {categoryValues, countryValues, MetadataType} from "../utils/filterData.ts";
 import {createAMeal, filterMealByType} from "../utils/MealFetchHelpers.ts";
-import {randomUrl, searchUrl} from "../utils/routesData.ts";
+import {MealResponse, randomUrl, searchUrl} from "../utils/routesData.ts";
 
 
 export default function HomePage() {
@@ -51,7 +51,7 @@ export default function HomePage() {
         fetch(url)
             .then(res => res.json())
             .then(data => setMeals(
-                data.meals? data.meals.map(meal => createAMeal(meal)) : []
+                data.meals? data.meals.map((meal: MealResponse)=> createAMeal(meal)) : []
             ))
             .then(() => setSpinner(false))
     }
