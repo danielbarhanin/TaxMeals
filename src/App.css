@@ -10,6 +10,22 @@
   padding: 10px;
 }
 
+.powered-by-container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.powered-by-container > img {
+  width: 10%;
+}
+
+button:active {
+  background-color: #F6F5F5;
+  transform: translateY(4px);
+}
+
 /* App */
 
 /* Navbar */
@@ -47,6 +63,7 @@ nav {
   margin-left: auto;
   font-size: 13px;
   align-self: flex-end;
+  cursor: pointer;
 }
 
 .nav--lower {
@@ -330,13 +347,15 @@ nav {
 .ingredient-name {
   margin-left: 10px;
 }
+.instructions-list {
+  margin-top: 10px;
+}
 
-.meal-instructions {
+.instruction-desc {
   font-weight:400;
   font-size: 20px;
   font-style: normal;
-  line-height: 2.8rem;
-  margin-top: -5px;
+  padding: 10px;
 }
 
 

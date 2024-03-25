@@ -28,12 +28,12 @@ export default function Navbar() {
             <div className="nav--upper">
                 <img src={logo} alt="navIcon" className="nav--logo" onClick={handleHomeClicked}/>
                 <h1 className="nav--title" onClick={handleHomeClicked}>TaxMeals</h1>
-                <p className="nav--p">Ⓒ powered by <b>DBH</b></p>
+                <p className="nav--p" onClick={() => navigate("/meals/powered_by")}>Ⓒ powered by <b>DBH</b></p>
             </div>
             <div className="nav--lower">
                 <button className="nav-button" onClick={handleHomeClicked} style={homeButtonBackground}>Home</button>
                 <button className="nav-button" onClick={() => navigate(`${categoryRoute}/Beef`)} style={categoryButtonBackground}>Category</button>
-                <button className="nav-button" onClick={() => navigate(`${countryRoute}/American`)} style={countryButtonBackground}>County</button>
+                <button className="nav-button" onClick={() => navigate(`${countryRoute}/American`)} style={countryButtonBackground}>Country</button>
             </div>
         </nav>
     )

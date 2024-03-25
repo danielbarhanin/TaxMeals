@@ -7,6 +7,7 @@ import {Fragment} from "react";
 import TypePage from "./components/TypePage.tsx";
 import {MetadataType} from "./utils/filterData.ts";
 import {homeRoute} from "./utils/routesData.ts";
+import powered_by_img from "./assets/powered_by.png"
 
 function App() {
   return (
@@ -20,6 +21,12 @@ function App() {
                       <Route path="/meals/:id" element={<MealPage />}/>
                       <Route path="/meals/category/:category" element={<TypePage type={MetadataType.CATEGORY}/>}/>
                       <Route path="/meals/country/:country" element={<TypePage type={MetadataType.COUNTRY}/>}/>
+                      <Route path="/meals/powered_by" element={
+                              <div className="powered-by-container">
+                                  <img src={powered_by_img} alt="powered-by-img"/>
+                              </div>
+                        }
+                     />
                   </Routes>
               </Fragment>
           </Router>

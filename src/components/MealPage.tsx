@@ -26,6 +26,11 @@ export default function MealPage() {
     const ingredientsElements = meal?.ingredients.map(ingredient =>
         <Ingredient name={ingredient.name} measurement={ingredient.measurement}/>
     )
+    const instructionsElements = meal?.instructions.split("\r\n")
+        .filter(instruction => instruction && !instruction.toLowerCase().startsWith("step"))
+        .map(instruction =>
+            <li className="instruction-desc">{instruction}</li>
+        )
 
     function getIngredient(meal: any): IngredientProps[] {
         const ingredients: IngredientProps[] = []
@@ -75,7 +80,9 @@ export default function MealPage() {
                 {ingredientsElements}
             </div>
             <h2 className="meal-section" >Instructions</h2>
-            <p className="meal-instructions">{meal?.instructions}</p>
+            <ul className="instructions-list">
+                {instructionsElements}
+            </ul>
         </main>
     )
 }
