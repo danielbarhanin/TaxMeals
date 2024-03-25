@@ -95,6 +95,27 @@ nav {
 
 /* Navbar */
 
+/* NoResult */
+.no-results-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+ }
+
+.no-results-container > h2 {
+  font-family: "KoHo", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 35px;
+}
+
+.no-results-container > img {
+  margin-left: 30px;
+  width: 70px;
+}
+
+/* NoResult */
+
 /* Search section*/
 .search-section {
   display: flex;

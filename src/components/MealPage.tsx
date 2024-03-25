@@ -27,9 +27,9 @@ export default function MealPage() {
         <Ingredient name={ingredient.name} measurement={ingredient.measurement}/>
     )
     const instructionsElements = meal?.instructions.split("\r\n")
-        .filter(instruction => instruction && !instruction.toLowerCase().startsWith("step"))
+        .filter(instruction => instruction && !/^(step )?\d+$/.test(instruction.toLowerCase()))
         .map(instruction =>
-            <li className="instruction-desc">{instruction}</li>
+            <li className="instruction-desc">{instruction.replace(/^\d+./, '')}</li>
         )
 
     function getIngredient(meal: any): IngredientProps[] {

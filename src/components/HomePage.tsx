@@ -5,6 +5,7 @@ import SearchSection from "./SearchSection.tsx";
 import {categoryValues, countryValues, MetadataType} from "../utils/filterData.ts";
 import {createAMeal, filterMealByType} from "../utils/MealFetchHelpers.ts";
 import {MealResponse, randomUrl, searchUrl} from "../utils/routesData.ts";
+import NoResults from "./NoResults.tsx";
 
 
 export default function HomePage() {
@@ -138,6 +139,10 @@ export default function HomePage() {
                 <div className="meals-container">
                     {mealElements}
                 </div>
+            }
+            {
+                meals.length == 0 && !spinner &&
+                <NoResults/>
             }
         </>
     )
